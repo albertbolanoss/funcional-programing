@@ -42,7 +42,9 @@ public class StudentDataBase {
     Student student5 = new Student("Sophia",4,3.5,"female",10, Arrays.asList("swimming", "dancing","football"));
     Student student6 = new Student("James",4,3.9,"male", 22,Arrays.asList("swimming", "basketball","baseball","football"));
 
-    List<Student> students = Arrays.asList(student1,student2,student3,student4,student5,student6);
+    Student student7 = new Student("Adam",1,3.6, "male",10,Arrays.asList("swimming", "basketball","volleyball"));
+
+    List<Student> students = Arrays.asList(student1,student2,student3,student4,student5,student6,student7);
     return students;
   }
 }
