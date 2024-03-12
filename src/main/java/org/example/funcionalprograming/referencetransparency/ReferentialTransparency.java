@@ -1,6 +1,4 @@
-package org.example.funcionalprograming.highorder;
-
-import java.util.logging.Level;
+package org.example.funcionalprograming.referencetransparency;
 
 public class ReferentialTransparency {
   public static void main(String[] args) {

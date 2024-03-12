@@ -1,0 +1,52 @@
+- All is a pure mathematical functions
+- Just it use the algorithm and data with affect the state or variables
+- Avoid change of the stage and mutation data
+- it's a declarative style that focus on What to solve rather how to solve
+- Born from Lambdas Calculus
+
+
+Function as first citizens
+- The functional programing allow to return a Function and use Functions as parameter
+   Function method(Function a, Function b)
+
+Pure Functions
+- The output of the pure function depends only on (a) its input parameters and (b) its internal algorithm
+- A pure function has no Side Effects, the no Side effect means that depends on only the parameter and algorithm
+  if the change replace the call of the method by the result the behavior must remain unchanged (for example, logs, screen, database)
+  check ImpureFunction.java
+  A Pure function always return a function
+  The consumer is expected to operate via side-effects (because this does not return anything)
+
+High Order Function
+- Are function that return a Function or has function parameters or both
+  Function method()
+  method(Function a, Function b)
+  Function method(Function a, Function b)
+
+No side effects
+- Depend on just the input parameter and the algorithm, it does not affect with other variable
+Reference Transparency
+- it's a property of a function, variable or expression whereby  the expression can by replace by its (evaluated) value
+  without affecting the behavior of the program
+
+Operations
+
+Chaining
+- funtion = functionA.andThenApply(functionB).andThenApply(functionC)
+  funtion.accept("")
+
+the first function is executing and then the second or next
+
+Composition
+- the second function is executing and then the before
+
+Curring
+
+it's a technique that convert a function with two parameters in two function with just one parameter each one
+
+
+Lazy evaluation
+ - avoid execute instance before that execute the function
+   () -> new myObject() : this is no execute until the function interface will be executed
+
+
