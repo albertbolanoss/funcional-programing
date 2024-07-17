@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.function.BinaryOperator;
 
 public class BinaryOperatorExample {
-  static Comparator<Integer> comparator = (a, b) -> a.compareTo(b);
+  static Comparator<Integer> comparator = Integer::compareTo;
 
   public static void main(String[] args) {
     BinaryOperator<Integer> binaryOperator = (a, b) -> a * b;
