@@ -23,5 +23,9 @@
 hs_err_pid*
 replay_pid*
 
+# The haskell build directory
+target/
 
-.idea
+# The IDE files
+.idea/
+.vscode/
