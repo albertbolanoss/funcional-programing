@@ -12,6 +12,11 @@ public class FunctionMapper {
     public static Function<PreviewDTO, Function<Function<PreviewDTO, EnrichDataDTO>, Optional<EnrichDataDTO>>> setEnrichData =
             previewDTO -> enrichDataDTOFunction -> Optional.ofNullable(enrichDataDTOFunction.apply(previewDTO));
 
+    public static Function<PreviewDTO, Function<Function<EnrichDataDTO, List<String>>, Optional<List<String>>>> functMapper =
+            previewDTO -> enrichDataDTOFunction -> Optional.ofNullable(previewDTO)
+                    .map(PreviewDTO::getEnrichData)
+                    .map(enrichDataDTOFunction);
+
     public static Function<PreviewDTO, Function<Function<PreviewDTO, EnrichDataDTO>, Optional<List<String>>>> getEnrichDataShapes =
             previewDTO -> enrichDataDTOFunction -> Optional.ofNullable(enrichDataDTOFunction.apply(previewDTO))
                     .map(EnrichDataDTO::getShapes);
@@ -26,6 +31,8 @@ public class FunctionMapper {
         Optional<EnrichDataDTO> enrichDataDTOOptional = setEnrichData.apply(previewDTO).apply(PreviewDTO::getEnrichData);
 
         getEnrichDataShapes.apply(previewDTO).apply(PreviewDTO::getEnrichData).ifPresent(System.out::println);
+
+        functMapper.apply(previewDTO).apply(EnrichDataDTO::getShapes).ifPresent(System.out::println);
 
         if (enrichDataDTOOptional.isPresent()) {
             System.out.println("EnrichDataDTO is present");
